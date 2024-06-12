@@ -17,13 +17,13 @@ object is${ctl} {
 
   def y(t1DecodePattern: T1DecodePattern): Boolean = {
     val allMatched = ${data}
-    allMatched.contains(t1DecodePattern.instruction)
+    allMatched.contains(t1DecodePattern.instruction.name)
   }
   def n(t1DecodePattern: T1DecodePattern): Boolean = {
     val allMatched = t1DecodePattern.t1Parameter.allInstuctions.filter( i =>
       !(y(t1DecodePattern) || dc(t1DecodePattern))
     )
-    allMatched.contains(t1DecodePattern.instruction)
+    allMatched.contains(t1DecodePattern.instruction.name)
   }
 
   def dc(t1DecodePattern: T1DecodePattern): Boolean = false

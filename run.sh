@@ -8,15 +8,15 @@ configs="blastoise"
 configsPath=configs
 resultPath=result
 baseResult=master_res
-gen_configs="true"
-# run_configs="true"
-#diff_master="true"
+# gen_configs="true"
+run_configs="true"
+# diff_master="true"
 
 if [ "$gen_configs" == "true" ]; then
     for c in $configs
     do
         mill configgen $c -t $configsPath
-        # mv $configsPath $c.json
+        mv $configsPath $c.json
     done
 fi
 
